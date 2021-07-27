@@ -41,7 +41,7 @@ const AdvancedSearch = ({ updateAdvancedSearchForm, advancedSearchForm }) => {
           <Form.Check
           inline
           label={platform.name}
-          name={platform.name}
+          name={platform.id}
           type='checkbox'
           id={platform.name}
           key={`inline-${platform.id}`}
@@ -55,7 +55,7 @@ const AdvancedSearch = ({ updateAdvancedSearchForm, advancedSearchForm }) => {
             <Form.Check
             inline
             label={genre.name}
-            name={genre.name}
+            name={genre.id}
             type='checkbox'
             id={genre.name}
             key={`inline-${genre.id}`}
