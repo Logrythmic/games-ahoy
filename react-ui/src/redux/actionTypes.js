@@ -1,1 +1,3 @@
 export const GET_SEARCH_TERM = 'GET_SEARCH_TERM';
+export const GET_ADVANCED_SEARCH = 'GET_ADVANCED_SEARCH';
+export const GET_GAMES = 'GET_GAMES';

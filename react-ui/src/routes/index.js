@@ -5,6 +5,7 @@ import Contact from "./contact/contact";
 import Credits from "./credits/credits";
 import Reviews from "./reviews/reviews";
 import Search from "./search/search";
+import AdvSearch from "./search/advancedSearch";
 
 const Routes = () => {
   return(
@@ -13,6 +14,11 @@ const Routes = () => {
         exact={true}
         path="/"
         render={()=> <Search />}
+        />
+        <Route 
+        exact={true}
+        path="/adv-search"
+        render={()=> <AdvSearch />}
         />
         <Route 
         exact={true}
