@@ -1,4 +1,4 @@
-import { GET_ADVANCED_SEARCH } from '../actionTypes';
+import { GET_ADVANCED_SEARCH_RESULTS } from '../actionTypes';
 
 const initialState = {
   keywords: '',
@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export default function(state=initialState, action){
-  if(action.type === GET_ADVANCED_SEARCH){
+  if(action.type === GET_ADVANCED_SEARCH_RESULTS){
     return action.payload
   }
   return state;

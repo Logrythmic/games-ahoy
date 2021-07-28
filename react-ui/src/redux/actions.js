@@ -1,5 +1,5 @@
 import {
-  GET_ADVANCED_SEARCH,
+  GET_ADVANCED_SEARCH_RESULTS,
   GET_SEARCH_TERM
 } from './actionTypes';
 
@@ -12,9 +12,9 @@ export const updateSearchTerm = searchTerm =>{
   }
 }
 
-export const updateAdvancedSearchForm = (keywords,platforms,genres) =>{
+export const updateReviews = (keywords,platforms,genres) =>{
   return{
-    type: GET_ADVANCED_SEARCH,
+    type: GET_ADVANCED_SEARCH_RESULTS,
     payload:{
       keywords,
       platforms,

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { updateAdvancedSearchForm } from '../redux/actions';
-import { Form, InputGroup } from 'react-bootstrap'
+import { updateReviews } from '../redux/actions';
+import { Form } from 'react-bootstrap'
 import { genres, platforms } from "./data"
 
 const AdvancedSearch = ({ updateAdvancedSearchForm, advancedSearchForm }) => {
@@ -25,7 +25,7 @@ const AdvancedSearch = ({ updateAdvancedSearchForm, advancedSearchForm }) => {
     console.log(selected_genres);
 
     const advancedForm = {};
-    updateAdvancedSearchForm(advancedForm);
+    updateReviews(advancedForm);
   }
   // will need to create a form that captures on submit and sends to store to update or will go to the API call directly 
   return(
@@ -74,7 +74,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateAdvancedSearchForm: (keywords,platforms,genres) => dispatch(updateAdvancedSearchForm(keywords,platforms,genres))
+  updateReviews: (keywords,platforms,genres) => dispatch(updateReviews(keywords,platforms,genres))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdvancedSearch);
