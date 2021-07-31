@@ -26,10 +26,9 @@ export default gameSlice.reducer;
 
 const { gamesRequested, gamesReceived, gamesRequestFailed } = gameSlice.actions;
 
-export const loadGames = (bodyData) => (dispatch) => {
+export const loadGames = () => (dispatch) => {
   return dispatch(
     apiCallBegan({
-      data: bodyData,
       onStart: gamesRequested.type,
       onSuccess: gamesReceived.type,
       onError: gamesRequestFailed.type,

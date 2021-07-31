@@ -17,14 +17,10 @@ const gameApi =
 
     try {
       const response = await axios({
-        url: "https://api.igdb.com/v4/games",
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Client-ID': CLIENT_ID,
-            'Authorization': 'Bearer '+AUTH_TOKEN,
-        },
-        data: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,screenshots; limit 7;`
+        url: "/igdb/v4/games",
+        method,
+        headers: {},
+        data,
       });
       if(onSuccess) dispatch({ type: onSuccess, payload: response.data });
     } catch(error){

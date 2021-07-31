@@ -1,32 +1,32 @@
-import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { updateReviews } from '../redux/actions';
 import { Form } from 'react-bootstrap'
 import { genres, platforms } from "./data"
 
-const AdvancedSearch = ({ updateAdvancedSearchForm, advancedSearchForm }) => {
 
+const AdvancedSearch = ({ updateReviews }) => {
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e);
-
     const selected_keywords = e.target[0].value;
-    console.log(selected_keywords);
+
     const selected_platforms = [];
     for(let i=1; i<13;i++){
       if(e.target[i].checked)
       selected_platforms.push(e.target[i].name);
     }
-    console.log(selected_platforms)
     const selected_genres =[];
     for(let i=14; i<36; i++){
       if(e.target[i].checked)
       selected_genres.push(e.target[i].name);
     }
-    console.log(selected_genres);
-
-    const advancedForm = {};
-    updateReviews(advancedForm);
+    updateReviews(selected_keywords,selected_platforms,selected_genres);
+    
   }
+  // useEffect(()=>{
+  //   dispatch();
+  // },[updateReviews])
+
   // will need to create a form that captures on submit and sends to store to update or will go to the API call directly 
   return(
     <Form onSubmit={handleSubmit}>
