@@ -1,15 +1,12 @@
-import { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { updateReviews } from '../redux/actions';
 import { Form } from 'react-bootstrap'
 import { db_genres, db_platforms } from "./data"
-import { loadGames } from '../redux/services/games/gameSlice';
+
 
 
 
 const AdvancedSearch = ({ updateReviews }) => {
-  // const dispatch = useDispatch();
-  // const dataQuery = useSelector((state)=>state.dataQuery)
   const handleSubmit = e => {
     e.preventDefault();
     const selected_keywords = e.target[0].value;
@@ -25,9 +22,6 @@ const AdvancedSearch = ({ updateReviews }) => {
       selected_genres.push(e.target[i].name);
     }
     updateReviews(selected_keywords,selected_platforms,selected_genres);
-    // console.log(dataQuery);
-    // dispatch(loadGames(dataQuery)) // data query is not console logging
-    // console.log(dataQuery);
   }
 
   return(

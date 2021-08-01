@@ -4,17 +4,12 @@ import { loadGames } from '../redux/services/games/gameSlice';
 
 
 const SearchForm = ({ updateSearchTerm, searchTerm }) => {
-  // const dispatch = useDispatch();
-  const dataQuery = useSelector((state)=>state.advancedSearchForm.dataQuery)
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const searchTerm = e.target[0].value;
     updateSearchTerm(searchTerm);
 
-    console.log(dataQuery);
-    // dispatch(loadGames(dataQuery)) // data query is not console logging
-    console.log(dataQuery);
   }
 
   return (
