@@ -6,6 +6,7 @@ import Credits from "./credits/credits";
 import Reviews from "./reviews/reviews";
 import Search from "./search/search";
 import AdvSearch from "./search/advancedSearch";
+import AddReview from "../components/addReview";
 
 const Routes = () => {
   return(
@@ -38,7 +39,7 @@ const Routes = () => {
         <Route 
         exact={true}
         path="/user-review"
-        render={()=> <p>user review Page</p>}
+        render={()=><AddReview />}
         />
         <Route 
         exact={true}

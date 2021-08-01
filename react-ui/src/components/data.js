@@ -1,4 +1,4 @@
-export const genres = [
+export const db_genres = [
   {
     id: 4,
     name: "Fighting"
@@ -93,7 +93,7 @@ export const genres = [
   }
 ];
 
-export const platforms = [
+export const db_platforms = [
   {
     id: 7,
     category: 1,

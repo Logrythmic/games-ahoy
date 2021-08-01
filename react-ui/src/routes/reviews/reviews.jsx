@@ -4,10 +4,10 @@ import Loading from '../../components/loading';
 import LoadedReviews from '../../components/loadedReviews';
 
 function Reviews () {
-  const dispatch = useDispatch();
-  dispatch(loadGames());
-  const isloading = useSelector((state)=>state.loading)
-  const reviews = useSelector((state)=>state.list);
+  // const dispatch = useDispatch();
+  // dispatch(loadGames());
+  const isloading = useSelector((state)=>state.gamesReducer.loading)
+  const reviews = useSelector((state)=>state.gamesReducer.list);
   // const state = useSelector((state)=>state);
   // const bodyDataBase = `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,screenshots.*; limit 7;`;
   

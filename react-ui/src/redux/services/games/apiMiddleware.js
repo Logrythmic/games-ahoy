@@ -9,7 +9,7 @@ const gameApi =
   async (action) => {
     if (action.type !== actions.apiCallBegan.type) return next(action);
 
-    const { url, method, data, onStart, onSuccess, onError } = action.payload;
+    const { method, data, onStart, onSuccess, onError } = action.payload;
 
     if(onStart) dispatch({type: onStart});
 

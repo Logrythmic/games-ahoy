@@ -3,11 +3,11 @@ import {
   GET_SEARCH_TERM
 } from './actionTypes';
 
-export const updateSearchTerm = searchTerm =>{
+export const updateSearchTerm = keywords =>{
   return{
     type: GET_SEARCH_TERM,
     payload:{
-      searchTerm
+      keywords
     }
   }
 }

@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { updateReviews } from '../redux/actions';
 import { Form } from 'react-bootstrap'
-import { genres, platforms } from "./data"
+import { db_genres, db_platforms } from "./data"
+import { loadGames } from '../redux/services/games/gameSlice';
+
 
 
 const AdvancedSearch = ({ updateReviews }) => {
+  // const dispatch = useDispatch();
+  // const dataQuery = useSelector((state)=>state.dataQuery)
   const handleSubmit = e => {
     e.preventDefault();
     const selected_keywords = e.target[0].value;
@@ -21,13 +25,11 @@ const AdvancedSearch = ({ updateReviews }) => {
       selected_genres.push(e.target[i].name);
     }
     updateReviews(selected_keywords,selected_platforms,selected_genres);
-    
+    // console.log(dataQuery);
+    // dispatch(loadGames(dataQuery)) // data query is not console logging
+    // console.log(dataQuery);
   }
-  // useEffect(()=>{
-  //   dispatch();
-  // },[updateReviews])
 
-  // will need to create a form that captures on submit and sends to store to update or will go to the API call directly 
   return(
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="search-term-advanced">
@@ -37,7 +39,7 @@ const AdvancedSearch = ({ updateReviews }) => {
       <Form.Group className="mb-3" controlId="platforms-checkboxes">
         <Form.Label><h5>Platforms</h5></Form.Label>
         <br/>
-        {platforms.map((platform)=>(
+        {db_platforms.map((platform)=>(
           <Form.Check
           inline
           label={platform.name}
@@ -51,7 +53,7 @@ const AdvancedSearch = ({ updateReviews }) => {
       <Form.Group className="mb-3" controlId="genres-checkboxes" >
         <Form.Label><h5>Genres</h5></Form.Label>
         <br/>
-        {genres.map((genre)=>(
+        {db_genres.map((genre)=>(
             <Form.Check
             inline
             label={genre.name}

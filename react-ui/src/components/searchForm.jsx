@@ -1,16 +1,22 @@
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { updateSearchTerm } from '../redux/actions';
+import { loadGames } from '../redux/services/games/gameSlice';
+
 
 const SearchForm = ({ updateSearchTerm, searchTerm }) => {
-
+  // const dispatch = useDispatch();
+  const dataQuery = useSelector((state)=>state.advancedSearchForm.dataQuery)
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
-    console.log(e.target[0].value);
+
     const searchTerm = e.target[0].value;
     updateSearchTerm(searchTerm);
+
+    console.log(dataQuery);
+    // dispatch(loadGames(dataQuery)) // data query is not console logging
+    console.log(dataQuery);
   }
-  // will need to create a form that captures on submit and sends to store to update or will go to the API call directly 
+
   return (
     <form onSubmit={handleSubmit}>
       <input defaultValue={searchTerm} /><button type='submit'>Submit</button>
