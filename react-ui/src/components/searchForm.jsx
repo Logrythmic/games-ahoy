@@ -1,6 +1,6 @@
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { connect} from 'react-redux';
 import { updateSearchTerm } from '../redux/actions';
-import { loadGames } from '../redux/services/games/gameSlice';
+
 
 
 const SearchForm = ({ updateSearchTerm, searchTerm }) => {

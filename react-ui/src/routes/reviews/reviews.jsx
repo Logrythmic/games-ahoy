@@ -4,15 +4,15 @@ import Loading from '../../components/loading';
 import LoadedReviews from '../../components/loadedReviews';
 
 function Reviews () {
-  const query = useSelector((state)=> state.advancedSearchForm.dataQuery);
-  const dispatch = useDispatch();
-  dispatch(loadGames(query));
+  // const query = useSelector((state)=> state.advancedSearchForm.dataQuery);
+  // const dispatch = useDispatch();
+  // dispatch(loadGames(query));
   const isloading = useSelector((state)=>state.gamesReducer.loading);
   const reviews = useSelector((state)=>state.gamesReducer.list);
   
-  useEffect(()=> {
-    dispatch(loadGames(query));
-  }, [dispatch]);
+  // useEffect(()=> {
+  //   dispatch(loadGames(query));
+  // }, [dispatch]);
   
   return(
     <>

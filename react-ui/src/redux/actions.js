@@ -1,6 +1,7 @@
 import {
   GET_ADVANCED_SEARCH_RESULTS,
-  GET_SEARCH_TERM
+  GET_SEARCH_TERM,
+  ADD_USER_REVIEW,
 } from './actionTypes';
 
 export const updateSearchTerm = keywords =>{
@@ -19,6 +20,17 @@ export const updateReviews = (keywords,platforms,genres) =>{
       keywords,
       platforms,
       genres
+    }
+  }
+}
+
+export const addReviews = (id, wordReview, rating) => {
+  return{
+    type: ADD_USER_REVIEW,
+    payload:{
+      id,
+      wordReview,
+      rating,
     }
   }
 }

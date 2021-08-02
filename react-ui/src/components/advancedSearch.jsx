@@ -1,4 +1,4 @@
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { updateReviews } from '../redux/actions';
 import { Form } from 'react-bootstrap'
 import { db_genres, db_platforms } from "./data"
@@ -7,7 +7,8 @@ import { db_genres, db_platforms } from "./data"
 
 
 const AdvancedSearch = ({ updateReviews }) => {
-  const handleSubmit = e => {
+
+  const handleSearchSubmit = e => {
     e.preventDefault();
     const selected_keywords = e.target[0].value;
 
@@ -25,7 +26,7 @@ const AdvancedSearch = ({ updateReviews }) => {
   }
 
   return(
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSearchSubmit}>
       <Form.Group className="mb-3" controlId="search-term-advanced">
         <Form.Label><h5>Keywords</h5></Form.Label>
         <Form.Control type="text" placeholder="Search Here" />
