@@ -7,6 +7,7 @@ import Reviews from "./reviews/reviews";
 import Search from "./search/search";
 import AdvSearch from "./search/advancedSearch";
 import AddReview from "../components/addReview";
+import ExpandedReview from "../components/expandedReview";
 
 const Routes = () => {
   return(
@@ -44,7 +45,7 @@ const Routes = () => {
         <Route 
         exact={true}
         path="/reviews/:id"
-        render={()=> <p>review id Page</p>}
+        render={()=> <ExpandedReview />}
         />
         {/* <Route 
         exact={true}
