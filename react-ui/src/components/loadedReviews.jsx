@@ -9,11 +9,12 @@ function LoadedReviews (props) {
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>
-            <h5>Summary: </h5> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          <b>Summary: </b>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
             Delectus aperiam iure eos doloremque sit tempora.
           </Card.Text>
           <Card.Text>
-            <h5>Aggregated Rating: </h5> 85/100
+            <b>Aggregated Rating: </b> 85/100
           </Card.Text>
           <Button variant="primary" href="/reviews/1">Expand</Button>
         </Card.Body>
