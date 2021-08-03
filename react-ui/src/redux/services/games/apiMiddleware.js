@@ -1,7 +1,6 @@
 import axios from 'axios';
 import * as actions from './apiActions';
 
-const { AUTH_TOKEN, CLIENT_ID } = process.env;
 
 const gameApi = 
   ({ dispatch }) => 
