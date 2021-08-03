@@ -3,6 +3,7 @@ import { GET_ADVANCED_SEARCH_RESULTS, GET_SEARCH_TERM } from '../actionTypes';
 
 const initialState = {
   keywords: '',
+  loader: null,
   platforms: [],
   genres: [],
   dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,screenshots.*; limit 7;`
@@ -12,6 +13,7 @@ export default function(state=initialState, action){
   if(action.type === GET_SEARCH_TERM){
     return{
       keywords: action.payload.keywords,
+      loader: false,
       platforms: [],
       genres: [],
       dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,screenshots.*; limit 7;`

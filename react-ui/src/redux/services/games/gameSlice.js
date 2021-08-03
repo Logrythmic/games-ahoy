@@ -6,7 +6,7 @@ const gameSlice = createSlice({
   name:"gamesApi",
   initialState: {
     list: [],
-    loading: false,
+    loading: null,
   },
   reducers: {
     gamesRequested: (gamesApi, action) => {
@@ -29,6 +29,7 @@ const { gamesRequested, gamesReceived, gamesRequestFailed } = gameSlice.actions;
 export const loadGames = (query) => (dispatch) => {
   return dispatch(
     apiCallBegan({
+      method:'POST',
       data: query,
       onStart: gamesRequested.type,
       onSuccess: gamesReceived.type,

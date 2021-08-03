@@ -17,11 +17,15 @@ const gameApi =
     try {
       const response = await axios({
         url: "/igdb/v4/games",
+        Accept: 'application/json',
         method,
         headers: {},
         data,
       });
-      if(onSuccess) dispatch({ type: onSuccess, payload: response.data });
+      console.log(response);
+      if(onSuccess) {
+        // console.log(response.data);
+        dispatch({ type: onSuccess, payload: response.data });}
     } catch(error){
       if(onError) dispatch({ type: onError, payload: error.message });
     }

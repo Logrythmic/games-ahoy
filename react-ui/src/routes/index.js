@@ -1,5 +1,5 @@
-import { Route } from "react-router-dom";
-
+import { Route, Redirect} from "react-router-dom";
+import { useSelector } from 'react-redux';
 import About from "./about/about";
 import Contact from "./contact/contact";
 import Credits from "./credits/credits";
@@ -10,6 +10,8 @@ import AddReview from "../components/addReview";
 import ExpandedReview from "../components/expandedReview";
 
 const Routes = () => {
+  const isloading = useSelector((state)=>state.advancedSearchForm.loader);
+
   return(
       <>
         <Route 
@@ -27,6 +29,10 @@ const Routes = () => {
         path="/reviews"
         render={()=> <Reviews />}
         />
+        <Route 
+        exact={true}
+        path="/"
+        >{isloading === false ? <Redirect to="/reviews" /> : <Redirect to="/" />}</Route>
         <Route 
         exact={true}
         path="/about"
