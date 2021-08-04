@@ -12,7 +12,6 @@ app.use('/igdb', proxy('https://api.igdb.com',{
       proxyReqOpts.headers['Client-ID'] = CLIENT_ID;
       proxyReqOpts.headers['Accept'] = 'application/json';
       proxyReqOpts.headers['Authorization'] = 'Bearer '+AUTH_TOKEN;
-      proxyReqOpts.method = 'POST';
       return proxyReqOpts;
   }
 }))

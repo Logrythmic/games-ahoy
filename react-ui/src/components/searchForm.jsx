@@ -4,7 +4,7 @@ import { updateSearchTerm } from '../redux/actions';
 
 
 const SearchForm = ({ updateSearchTerm, searchTerm }) => {
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const searchTerm = e.target[0].value;

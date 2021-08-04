@@ -35,6 +35,10 @@ const Routes = () => {
         >{isloading === false ? <Redirect to="/reviews" /> : <Redirect to="/" />}</Route>
         <Route 
         exact={true}
+        path="/adv-search"
+        >{isloading === false ? <Redirect to="/reviews" /> : <Redirect to="/adv-search" />}</Route>
+        <Route 
+        exact={true}
         path="/about"
         render={()=> <About />}
         />

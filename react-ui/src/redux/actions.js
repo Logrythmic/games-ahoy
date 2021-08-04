@@ -2,6 +2,7 @@ import {
   GET_ADVANCED_SEARCH_RESULTS,
   GET_SEARCH_TERM,
   ADD_USER_REVIEW,
+  LOADER_RESET,
 } from './actionTypes';
 
 export const updateSearchTerm = keywords =>{
@@ -32,5 +33,11 @@ export const addReviews = (id, wordReview, rating) => {
       wordReview,
       rating,
     }
+  }
+}
+
+export const loaderReset = () => {
+  return{
+    type: LOADER_RESET,
   }
 }
