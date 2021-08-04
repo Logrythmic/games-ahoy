@@ -20,7 +20,7 @@ function Reviews () {
     <>
       <h2>Reviews</h2>
       <ul>
-        {isloading ? <Loading /> : <LoadedReviews props={reviews} />}
+        {isloading ? <Loading /> : <LoadedReviews props = {reviews}/>}
       </ul>
     </>
   )

@@ -22,10 +22,7 @@ const gameApi =
         headers: {},
         data,
       });
-      console.log(response);
-      if(onSuccess) {
-        // console.log(response.data);
-        dispatch({ type: onSuccess, payload: response.data });}
+      if(onSuccess) dispatch({ type: onSuccess, payload: response.data });
     } catch(error){
       if(onError) dispatch({ type: onError, payload: error.message });
     }
