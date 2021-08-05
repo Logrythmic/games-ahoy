@@ -26,9 +26,11 @@ footer{
 
 body {
   background-image: url("https://images.unsplash.com/photo-1523843268911-45a882919fec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80");
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 .review-grid{

@@ -22,7 +22,7 @@ function LoadedReviews (reviews) {
     <div >
       <Row xs={1} md={2} lg={4} className="g-4">
         {reviews.props.map((review)=> (
-        <Col>
+        <Col key={review.id}>
         <Card key={review.id} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={handleImage(review)} />
           <Card.Body>
