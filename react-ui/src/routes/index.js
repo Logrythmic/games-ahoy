@@ -8,7 +8,6 @@ import Search from "./search/search";
 import AdvSearch from "./search/advancedSearch";
 import AddReview from "../components/addReview";
 import ExpandedReview from "../components/expandedReview";
-import { Component } from "react";
 
 const Routes = () => {
   const isloading = useSelector((state)=>state.advancedSearchForm.loader);
@@ -55,8 +54,8 @@ const Routes = () => {
         />
         <Route 
         exact={true}
-        path="/user-review"
-        render={()=><AddReview />}
+        path="/user-review/:id"
+        component={AddReview}
         />
         <Route 
         exact={true}

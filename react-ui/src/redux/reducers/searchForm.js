@@ -23,7 +23,7 @@ export default function(state=initialState, action){
       loader: false,
       platforms: [],
       genres: [],
-      dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7;`
+      dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7;`
     }
   }
   

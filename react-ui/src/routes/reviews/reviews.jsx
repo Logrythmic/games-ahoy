@@ -14,7 +14,7 @@ function Reviews () {
   useEffect(()=> {
     dispatch(loadGames(query));
     dispatch(loaderReset())
-  }, []);
+  },[]);
   
   return(
     <>

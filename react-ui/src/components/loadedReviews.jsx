@@ -17,11 +17,6 @@ function LoadedReviews (reviews) {
   const handleNavLink = (id) =>{
     return "/expanded-review/"+id;
   }
-  const handleCardLink = (e) =>{
-    e.preventDefault();
-    console.log(e);
-    return e.target.href;
-  }
 
   return(
     <div>
@@ -33,7 +28,7 @@ function LoadedReviews (reviews) {
             <Card.Title>{review.name}</Card.Title>
             <Card.Text>
             <b>Summary: </b>
-              {review.summary}
+            {review.summary}
             </Card.Text>
             <Card.Text>
             <b>Aggregated Rating: </b> {Math.floor(review.aggregated_rating)}/100
