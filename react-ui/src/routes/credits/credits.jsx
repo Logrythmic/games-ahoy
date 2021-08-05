@@ -1,6 +1,9 @@
 function Credits () {
   return(
-    <p>Credits Page</p>
+    <div className="credits">
+      <p>Background images Courtesy of Unsplash.com</p>
+    </div>
+    
   )
 }
 

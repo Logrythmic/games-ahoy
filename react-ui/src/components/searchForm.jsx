@@ -15,23 +15,21 @@ const SearchForm = ({ updateSearchTerm, searchTerm }) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}  className="home-search">
       <InputGroup className="sm-3">
         <FormControl
-          placeholder="Recipient's username"
+          defaultValue={searchTerm}
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
         />
-        <Button variant="outline-secondary" id="button-addon">
+        <Button type="submit" variant="secondary" id="button-addon">
           Submit
         </Button>
       </InputGroup>
-      <Link to="/adv-search">Advanced Search</Link>
+      <InputGroup className='sm-3 justify-content-center'>
+      <Button variant="light" as='span' className="justify-content-center"><Link to="/adv-search">Advanced Search</Link></Button>
+      </InputGroup>
     </Form>
-    // <form onSubmit={handleSubmit}>
-    //   <input defaultValue={searchTerm} /><button type='submit'>Submit</button>
-    //   <Link to="/adv-search">Advanced Search</Link>
-    // </form>
     );
 }
 

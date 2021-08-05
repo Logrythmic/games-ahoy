@@ -6,7 +6,7 @@ const initialState = {
   loader: null,
   platforms: [],
   genres: [],
-  dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7;`
+  dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7;`
 };
 
 export default function(state=initialState, action){
@@ -35,7 +35,7 @@ export default function(state=initialState, action){
         loader: false,
         platforms: action.payload.platforms,
         genres: action.payload.genres,
-        dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7;`
+        dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7;`
       }
     } else {
       if(action.payload.keywords && action.payload.platforms.length===0 && action.payload.genres.length===0){
@@ -45,7 +45,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7;`
+          dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7;`
         }
       } else if(action.payload.keywords==="" && action.payload.platforms && action.payload.genres.length===0){
         console.log('no genre or search')
@@ -54,7 +54,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7; where platforms=[`+action.payload.platforms+"];"
+          dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7; where platforms=[`+action.payload.platforms+"];"
         }
       } else if(action.payload.keywords==="" && action.payload.platforms.length===0 && action.payload.genres){
         console.log('no search or platform')
@@ -63,7 +63,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7; where genres=[`+action.payload.genres+"];"
+          dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7; where genres=[`+action.payload.genres+"];"
         }
       } else if(action.payload.keywords==="" && action.payload.platforms && action.payload.genres){
         console.log('no search term')
@@ -72,7 +72,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7; where platforms=[`+action.payload.platforms+`] | genres=[`+action.payload.genres+"];"
+          dataQuery: `fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7; where platforms=[`+action.payload.platforms+`] | genres=[`+action.payload.genres+"];"
         }
       } else if(action.payload.keywords && action.payload.platforms.length===0 && action.payload.genres){
         console.log('no platform')
@@ -81,7 +81,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7; where genres=[`+action.payload.genres+"];"
+          dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7; where genres=[`+action.payload.genres+"];"
         }
       } else if(action.payload.keywords && action.payload.platforms && action.payload.genres.length===0){
         console.log('no genre')
@@ -90,7 +90,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7; where platforms=[`+action.payload.platforms+"];"
+          dataQuery: `search "`+action.payload.keywords+`"; fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7; where platforms=[`+action.payload.platforms+"];"
         }
       } else{
         console.log('full query')
@@ -99,7 +99,7 @@ export default function(state=initialState, action){
           loader: false,
           platforms: action.payload.platforms,
           genres: action.payload.genres,
-          dataQuery: `search "`+action.payload.keywords+`";fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres,platforms,cover.*; limit 7; where platforms=[`+action.payload.platforms+`] | genres=[`+action.payload.genres+"];"
+          dataQuery: `search "`+action.payload.keywords+`";fields aggregated_rating,aggregated_rating_count,summary,slug,rating,rating_count,name,genres.*,platforms.*,cover.*; limit 7; where platforms=[`+action.payload.platforms+`] | genres=[`+action.payload.genres+"];"
         }
       }
     }

@@ -17,12 +17,12 @@ function Reviews () {
   },[]);
   
   return(
-    <>
-      <h2>Reviews</h2>
+    <div>
+      <h2 className="page-titles">~Reviews~</h2>
       <ul>
         {isloading ? <Loading /> : <LoadedReviews props = {reviews}/>}
       </ul>
-    </>
+    </div>
   )
 }
 

@@ -26,7 +26,7 @@ const AdvancedSearch = ({ updateReviews }) => {
   }
 
   return(
-    <Form onSubmit={handleSearchSubmit}>
+    <Form onSubmit={handleSearchSubmit} className="adv-search-form">
       <Form.Group className="mb-3" controlId="search-term-advanced">
         <Form.Label><h5>Keywords</h5></Form.Label>
         <Form.Control type="text" placeholder="Search Here" />

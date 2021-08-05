@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, Row, Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import no_image from '../no_image.png';
 
@@ -42,9 +42,10 @@ function ExpandedReview (props) {
   console.log(selectedGame);
   console.log(matchingReview);
   return(
-    <>
-      <p>Expanded Review Page</p>
+    <div className="expanded-game">
+      <Row>
       {selectedGame.map((selected)=> (
+        <Col>
         <Card key={selected.id} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={handleImage(selected)} />
           <Card.Body>
@@ -64,22 +65,10 @@ function ExpandedReview (props) {
             <Link to="/reviews">Return to List</Link>
           </Card.Body>
         </Card>
+        </Col>
       ))}
-       {/* {flag ? 
-          <ListGroup className="list-group-flush">
-            <b>User Ratings</b>
-            {matchingReview.map((user, index)=>{
-              <ListGroupItem key={index}><i>User #{index}:</i>
-                <p>Game Rating: {user.rating}/10</p>
-                <p>Comments: {user.wordReview}</p>
-              </ListGroupItem>
-            })}
-          </ListGroup>
-          :
-          <Card.Text>No user reviews available. Please use the links above to add your own.</Card.Text>
-          } */}
-
-    </>
+      </Row>
+    </div>
   )
 }
 

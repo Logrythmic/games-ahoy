@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import no_image from '../no_image.png';
 
 
@@ -19,9 +19,10 @@ function LoadedReviews (reviews) {
   }
 
   return(
-    <div>
-      <p>LoadedReviews Page</p>
+    <div >
+      <Row xs={1} md={2} lg={4} className="g-4">
         {reviews.props.map((review)=> (
+        <Col>
         <Card key={review.id} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={handleImage(review)} />
           <Card.Body>
@@ -36,7 +37,9 @@ function LoadedReviews (reviews) {
             <Link to={handleNavLink(review.id)}>Expanded View</Link>
           </Card.Body>
         </Card>
+        </Col>
         ))}
+      </Row>
     </div>
    
   )

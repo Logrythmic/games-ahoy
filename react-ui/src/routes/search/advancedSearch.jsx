@@ -3,7 +3,7 @@ import AdvancedSearch from '../../components/advancedSearch';
 function AdvSearch () {
   return(
     <>
-      <p>Advanced Search Page</p>
+      <h2 className="page-titles">~Advanced Search Form~</h2>
       <AdvancedSearch />
     </>
   )
