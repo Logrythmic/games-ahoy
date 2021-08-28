@@ -10,6 +10,7 @@ const AdvancedSearch = ({ updateReviews }) => {
 
   const handleSearchSubmit = e => {
     e.preventDefault();
+    // console.log(e);
     const selected_keywords = e.target[0].value;
 
     const selected_platforms = [];
